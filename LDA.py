@@ -108,13 +108,7 @@ test = fetch_20newsgroups(subset='test', shuffle = True)
   
 mylda = LDA()
 
-mytrain , mytest = mylda.init(train.data , test.data)
-
-# pro = mylda.preprocess(train.data)
-
-# corpus , dic = mylda.doc2bow_dict(pro)
-
-# model = mylda.LDA_model(num_topics = 10, dictionary = dic, epochs = 10)
+mylda.init(train.data , test.data)
 
 mylda.train(Filter = False , multicore = False , batch_size = 10 , epochs = 50 ,num_topics=10)
 
